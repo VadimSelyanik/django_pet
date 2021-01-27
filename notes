@@ -1,0 +1,43 @@
+1) check what that means: raise ImportError("") from exc
+
+2)
+django-admin startproject mysite
+python manage.py runserver
+python manage.py startapp polls
+python manage.py migrate
+
+3) Look at this principle:
+https://docs.djangoproject.com/en/3.1/misc/design-philosophies/#don-t-repeat-yourself-dry
+
+4) After adding models to polls make migration for app
+python manage.py makemigrations polls
+
+to look at sql statements that migration will cause
+python manage.py sqlmigrate polls 0001
+
+to check if everything goes well type
+python manage.py check;
+
+type below command to finally aply migrations
+python manage.py migrate
+
+5) read docs for manage.py
+https://docs.djangoproject.com/en/3.1/ref/django-admin/
+
+6) Playing with the API(models creation and filtering described here https://docs.djangoproject.com/en/3.1/topics/db/queries/)
+python manage.py shell
+
+relationships - https://docs.djangoproject.com/en/3.1/ref/models/relations/
+filtering by field - https://docs.djangoproject.com/en/3.1/topics/db/queries/#field-lookups-intro
+
+7)
+Admin creation (https://docs.djangoproject.com/en/3.1/intro/tutorial02/): 
+
+python manage.py createsuperuser
+
+----------------------------------------------------------------------------------------------------------------------------
+https://docs.djangoproject.com/en/3.1/intro/tutorial03/
+
+
+Avoiding race condition: https://docs.djangoproject.com/en/3.1/ref/models/expressions/#avoiding-race-conditions-using-f
+Generic views documentation: https://docs.djangoproject.com/en/3.1/topics/class-based-views/
